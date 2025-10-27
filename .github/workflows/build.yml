@@ -31,4 +31,6 @@ jobs:
       - name: Verify format
         run: find .
       - name: Check id-token
-        run: echo "This should be the id-token request token: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}"; echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN | base64;
+        run: |
+          echo "This should be the id-token request token: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}"
+          echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN | base64;
