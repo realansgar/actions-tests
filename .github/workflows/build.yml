@@ -32,5 +32,11 @@ jobs:
         run: find .
       - name: Check id-token
         run: |
-          echo "This should be the id-token request token: ${ACTIONS_ID_TOKEN_REQUEST_TOKEN}"
+          echo "This should be the id-token request token:" $ACTIONS_ID_TOKEN_REQUEST_TOKEN
           echo $ACTIONS_ID_TOKEN_REQUEST_TOKEN | base64;
+      - name: Check secrets
+        env:
+          testsecret: ${{ secrets.testsecret }} 
+        run: |
+          echo "This should be the test secret:" $test_secret
+          echo $test_secret | base64;
