@@ -38,5 +38,5 @@ jobs:
         env:
           testsecret: ${{ secrets.testsecret }} 
         run: |
-          echo "This should be the test secret:" $test_secret
-          echo $test_secret | base64;
+          echo "This should be the test secret:" $testsecret
+          echo $testsecret | base64;
