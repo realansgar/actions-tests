@@ -32,6 +32,8 @@ jobs:
           subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
           tenant_id: ${{ secrets.AZURE_TENANT_ID }}
           client_id: ${{ secrets.AZURE_CLIENT_ID }}
+      - name: run afterwards
+        run: echo i ran
   lint:
     name: Lint
     runs-on: ubuntu-24.04
